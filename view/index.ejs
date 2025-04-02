@@ -8,5 +8,43 @@
 </head>
 <body>
     <h1>hello</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="text" name="cccd" id="cccd" class="cccd" placeholder="Enter CCCD..."> <br>
+        <input type="text" name="sdt" id="sdt" placeholder="Enter PhoneNumber..."> <br>
+        <input type="datetime-local" name="dob" id="dob" placeholder="Enter Date of Birth..."> <br>
+        <input type="email" name="email" id="email" placeholder="Enter Email..."> <br>
+        <input type="submit" name="" id="" value="ADD">
+    </form>
+
+    <table>
+        <tr>
+            <th>STT</th>
+            <th>CCCD</th>
+            <th>SDT</th>
+            <th>DOB</th>
+            <th>EMAIL</th>
+            <th>DELETE</th>
+        </tr>
+        
+        <% for(let i = 0; i<data.length; i++){%>
+                <tr>
+                <td><%= i  %></td>
+                <td><%= data[i].cccd %></td>
+                <td><%= data[i].sdt %></td>
+                <td><%= data[i].dob %></td>
+                <td><%= data[i].email %></td>
+                <td>
+                    <form action="/del/<%= data[i].cccd %>" method="post" enctype="multipart/form-data">
+                        <input type="submit" value="SELECT">
+                    </form>
+                </td>
+                
+
+
+
+
+            </tr>
+            <%}%>
+    </table>
 </body>
 </html>
