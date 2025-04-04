@@ -16,6 +16,31 @@
         <input type="submit" name="" id="" value="ADD">
     </form>
 
+    <script>
+
+        document.querySelector("form").addEventListener("submit", function(e){
+            const cccd = document.getElementById("cccd").value.trim();
+            const sdt = document.getElementById("sdt");
+            const email = document.getElementById("email");
+            const dob = document.getElementById("dob");
+            const cccdRegex = /^[0-9]{12}$/;
+            //tu lam , met qua
+            let error ="";
+
+            if(!cccdRegex.test(cccd)){
+                error +=" - cccd 12 so \n";
+            }
+            
+
+            if(error !==""){
+                alert("Kiem tra lai thong tin : \n"+ error);
+                e.preventDefault(); // ngan submit
+            }
+
+        });
+
+    </script>
+
     <table>
         <tr>
             <th>STT</th>
